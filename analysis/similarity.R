@@ -16,7 +16,6 @@ df_sim = df_sim %>%
 
 
 # create a composite index excluding phylogenetic similarity
-
 min_max_norm = function(vec){
   norm = (vec - min(vec)) / (max(vec) - min(vec))
   return(norm)
@@ -30,7 +29,7 @@ df_composite = df_sim %>%
 
 boxplot(df_composite$composite_index)
 
-# distributions #####
+#### distributions ####
 
 # join and remove NA
 df_sim = df_composite %>%
@@ -67,7 +66,7 @@ box_hist = box_plots / histograms
 print(box_hist)
 ggsave("analysis/plots/box_hist.png", box_hist, width = 12, height = 8, dpi = 300)
 
-### correlations #####
+#### correlations ####
 
 cor(df_sim %>% select(!c(lang_1, lang_2)), method = "pearson") %>%
   corrplot.mixed(lower = "number",
@@ -77,7 +76,7 @@ cor(df_sim %>% select(!c(lang_1, lang_2)), method = "pearson") %>%
 cor(df_sim %>% select(!c(lang_1, lang_2)), method = "pearson")
 
 
-### scatterplots
+### scatterplots ####
 corrs = ggpairs(data = df_sim %>% select(!c(lang_1, lang_2)) %>%
           rename("Composite Index" = composite_index, "Morphosyntactic Similarity" = morphosyntactic_similarity, "Lexical Similarity" = lexical_similarity,
                  "Phoneme Inventory Similarity" = phoneme_inventory_similarity, "Tree-topology Similarity" = phylogenetic_similarity))
