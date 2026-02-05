@@ -1,4 +1,4 @@
-# Phylogeny-as-a-proxy-for-structural-linguistic-diversity
+# Phylogeny as a proxy for structural linguistic diversity: a reasonable approach?
 
 
 This is the repository for the code accompanying the paper "Phylogeny as a proxy for structural linguistic diversity: a reasonable
