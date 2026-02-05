@@ -60,7 +60,7 @@ split_langs_speakers_counts = function(df, langs_speakers = "langs"){
 
 
 
-# phoible ######
+#### phoible ######
 
 colSums(is.na(phoible))
 
@@ -137,7 +137,7 @@ sum(phoible_speakers_macro_distrib$speakers) # 6414593328
 
 phoible_speakers_macro_distrib$dataset = "Phoible"
 
-# ASJP #####
+#### ASJP #####
 
 colSums(is.na(asjp))
 
@@ -211,7 +211,7 @@ sum(asjp_speakers_macro_distrib$speakers) # 7439092381
 asjp_speakers_macro_distrib$dataset = "ASJP"
 
 
-# Grambank ####
+#### Grambank ####
 
 colSums(is.na(grambank))
 
@@ -280,7 +280,7 @@ grambank_speakers_macro_distrib = grambank_speakers_macro_distrib %>%
 
 grambank_speakers_macro_distrib$dataset = "Grambank"
 
-### intersection #######
+##### intersection #####
 
 colSums(is.na(intersect))
 
@@ -351,7 +351,7 @@ intersect_speakers_macro_distrib = intersect_speakers_macro_distrib %>%
 intersect_speakers_macro_distrib$dataset = "Intersection"
 
 
-#### check sum
+#### check sum ####
 asjp_langs_macro_distrib
 asjp_speakers_macro_distrib
 
@@ -545,7 +545,7 @@ get_n_lang_fam(asjp_langs)
 get_n_lang_fam(grambank_langs)
 get_n_lang_fam(intersect_langs)
 
-# top 10 largest languages missing from the databases
+##### top 10 largest languages missing from the databases #####
 
 langs_not_in_phoible = speakers %>%
   filter(!glottocode %in% phoible$glottocode) %>%
